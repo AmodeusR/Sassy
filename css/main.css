@@ -17,6 +17,32 @@ body {
 .container {
   width: 90%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 70em) {
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: calc(100vh - 4rem);
+    width: 80%;
+  }
 }
 
 .main {
@@ -30,23 +56,25 @@ body {
 }
 
 .logo {
-  margin: 1rem 0;
-  text-decoration: none;
-  color: white;
+  display: block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  min-height: unset;
+  padding: 1rem 0;
+  margin: 0 auto;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
+.logo__link {
+  text-decoration: none;
+  color: white;
+}
+
 .textbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   color: black;
   background: white;
+  max-width: 27rem;
   margin: 2rem 0;
   padding: 1rem;
   font-size: .8rem;
@@ -76,17 +104,13 @@ body {
   border-radius: 50%;
 }
 
+@media (min-width: 70em) {
+  .textbox {
+    padding: 2rem 1rem;
+  }
+}
+
 .hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
 }
 
@@ -102,7 +126,7 @@ body {
 }
 
 .hero__button {
-  margin: 1rem;
+  margin: 1rem .5rem;
   padding: 1rem 3rem;
   color: #222e43;
   background: #fff6bb;
@@ -112,10 +136,10 @@ body {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-  -webkit-transition: -webkit-transform 600ms ease, -webkit-box-shadow 600ms ease;
-  transition: -webkit-transform 600ms ease, -webkit-box-shadow 600ms ease;
-  transition: transform 600ms ease, box-shadow 600ms ease;
-  transition: transform 600ms ease, box-shadow 600ms ease, -webkit-transform 600ms ease, -webkit-box-shadow 600ms ease;
+  -webkit-transition: background-color 600ms ease, -webkit-transform 600ms ease, -webkit-box-shadow 600ms ease;
+  transition: background-color 600ms ease, -webkit-transform 600ms ease, -webkit-box-shadow 600ms ease;
+  transition: transform 600ms ease, box-shadow 600ms ease, background-color 600ms ease;
+  transition: transform 600ms ease, box-shadow 600ms ease, background-color 600ms ease, -webkit-transform 600ms ease, -webkit-box-shadow 600ms ease;
 }
 
 .hero__button:hover {
@@ -125,5 +149,14 @@ body {
           transform: scale(1.1);
   -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 70em) {
+  .hero {
+    max-width: 40rem;
+  }
+  .hero__title {
+    font-size: 5rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */
